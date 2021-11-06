@@ -74,11 +74,11 @@ module.exports = async (client, discord, member) => {
   //& ROL
 
   const channel = member.guild.channels.cache.find(
-    (channel) => channel.id === "881391003909648449"
+    (channel) => channel.id === "825397174241067058"
   );
 
   const reglas = member.guild.channels.cache.find(
-    (channel) => channel.id === "882381649919213568"
+    (channel) => channel.id === "825397174241067058"
   );
 
   const me = new discord.MessageEmbed()

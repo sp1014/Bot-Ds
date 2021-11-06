@@ -9,9 +9,8 @@ module.exports = async (client, discord, message) => {
   if (message.author.bot) return;
 
   //& REGISTRAR USUARIO
-  let userData;
   try {
-    userData = await userModel.findOne({ userID: message.author.id });
+    let userData = await userModel.findOne({ userID: message.author.id });
     if (!userData) {
       let user = await userModel.create({
         userID: message.author.id,
@@ -19,13 +18,11 @@ module.exports = async (client, discord, message) => {
         serverID: message.guild.id,
       });
       user.save();
-    } else {
-      console.log("usuario ya registrado");
+      console.log("Se ha registrado usuario");
     }
   } catch (error) {
     console.log(error);
   }
-
   //& REGISTRAR USUARIO
 
   if (!message.content.startsWith(prefix)) return;
